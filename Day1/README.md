@@ -25,3 +25,5 @@ that are used to solve the problems.
 For example, `floorNum` tracks the current floor Santa is on. Meanwhile,
 `enteredBasementAt` tracks the position of the first floor in which Santa enters
 the basement.
+
+Scanner: `day1.lex`
