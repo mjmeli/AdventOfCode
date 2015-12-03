@@ -10,8 +10,8 @@ directions, moving independently. Again, they may visit the same houses. Assume
 the following:
 
 * The directions given to the Santa's by the drunk elf are in `input.txt`.
-* Moves are always exactly one house to the north ('^'), south ('v'), east
-('>'), or west ('<').
+* Moves are always exactly one house to the north (`^`), south (`v`), east
+(`>`), or west (`<`).
 * After each move, a present is delivered.
 * The Santa's both deliver a present to the starting house.
 * The houses are laid out on an infinite two-dimensional grid.
