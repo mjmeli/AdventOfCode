@@ -23,3 +23,5 @@ makes getting an MD5 hash very easy. In essence, I increment through all the
 positive numbers until I find a hash with 5 leading zeroes. I then continue from
 this number until I find a hash with 6 leading zeroes (if you did not find 5
 leading zeroes, you couldn't have found 6 leading zeroes).
+
+`day4.py` - Python file containing the solution

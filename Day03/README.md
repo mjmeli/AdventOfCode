@@ -29,3 +29,8 @@ tracked throughout reading the directions. At each stop, the location is checked
 with the hash table. If it does not exist, it is added. At the end, the number
 of houses in the hash table are counted, and this is the number of houses who
 received at least one gift.
+
+`day3.c` - C code file that implemented solution
+
+`uthash.h` - C library for a hash table implementation written by Troy D.
+Hanson (https://troydhanson.github.io/uthash/)
