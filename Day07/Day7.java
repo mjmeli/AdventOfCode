@@ -46,7 +46,7 @@ public class Day7 {
         // Part 2 - Find new value of a after driving b with value of a from Part 1
         for (Wire wire : wires.values())
             wire.reset();           // reset all wires
-        wires.get("b").setValue(a);	// drive b with Part 1 value of a
+        wires.get("b").setValue(a); // drive b with Part 1 value of a
         System.out.println("Part 2: a = " + wires.get("a").getValue());
     }
 
