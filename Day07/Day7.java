@@ -16,23 +16,23 @@ public class Day7 {
         while (s.hasNextLine()) {
             String line = s.nextLine();
             String[] split = line.split(" ");
-            Wire wire = new Wire();
+            Wire wire = getWire(split[split.length-1]);
 
             // ASSIGN will have 3 elements per line
             if (split.length == 3) {
-                Operation op = new Operation("ASSIGN", new Driver(split[0]));
+                Operation op = new Operation("ASSIGN", getWire(split[0]));
                 wire.setOperation(op);
                 wires.put(split[2], wire);
             }
             // NOT will have 4 elements per line
             else if (split.length == 4){
-                Operation op = new Operation("NOT", new Driver(split[1]));
+                Operation op = new Operation("NOT", getWire(split[1]));
                 wire.setOperation(op);
                 wires.put(split[3], wire);
             }
             // All other operators will have 5 elements per line
             else {
-                Operation op = new Operation(split[1], new Driver(split[0]), new Driver(split[2]));
+                Operation op = new Operation(split[1], getWire(split[0]), getWire(split[2]));
                 wire.setOperation(op);
                 wires.put(split[4], wire);
             }
@@ -50,9 +50,30 @@ public class Day7 {
         System.out.println("Part 2: a = " + wires.get("a").getValue());
     }
 
+    // Get the Wire instance from hash map that represents a named wire. If it
+    // does not exist yet in the hash map, then add it first.
+    static public Wire getWire(String name)
+    {
+        // If name is a constant, create a wire with a value
+        if (name.matches("\\d+")) {
+            Wire wire = new Wire();
+            wire.setValue(Integer.parseInt(name));
+            return wire;
+        }
+        // If the name is a wire, then either get the wire from the hash table
+        // or create a new one.
+        else {
+            if (!wires.containsKey(name)) {
+                Wire wire = new Wire();
+                wires.put(name, wire);
+            }
+            return wires.get(name);
+        }
+    }
+
     // Wire is what gets added to the graph.
     static public class Wire {
-        Operation op;
+        Operation op;   // holds parents
         Integer value;
 
         public void setOperation(Operation op) {
@@ -73,38 +94,16 @@ public class Day7 {
         }
     }
 
-    // Driver is what drives the input to a Wire via an Operation.
-    static public class Driver {
-        String name;
-        int value;
-        boolean isConstant;
-
-        public Driver(String name) {
-            if (name.matches("\\d+")) {
-                this.value = Integer.parseInt(name);
-                this.isConstant = true;
-            } else {
-                this.name = name;
-                this.isConstant = false;
-            }
-        }
-
-        public int getValue() {
-            if (isConstant) return value;
-            else return wires.get(name).getValue();
-        }
-    }
-
     // An Operation performs an operation based on two input drivers.
     static public class Operation {
         Opcode opcode;
-        Driver left, right;
+        Wire left, right;
 
-        public Operation(String title, Driver driver) {
-            this(title, driver, null);
+        public Operation(String title, Wire wire) {
+            this(title, wire, null);
         }
 
-        public Operation(String title, Driver left, Driver right) {
+        public Operation(String title, Wire left, Wire right) {
             if (title.equals("ASSIGN")) this.opcode = Opcode.ASSIGN;
             else if (title.equals("AND")) this.opcode = Opcode.AND;
             else if (title.equals("OR")) this.opcode = Opcode.OR;

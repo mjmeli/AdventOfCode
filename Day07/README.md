@@ -43,8 +43,9 @@ To solve this solution, I made extensive use of recursion through a graph. I
 developed this solution in Java.
 
 To begin, I constructed a graph where each node in the graph is a `Wire`. Each
-`Wire` gets it's value from a specific `Operation`. An `Operation` is simply an
-operation on two input `Driver`s.
+`Wire` gets it's value from a specific `Operation` on two inputs `Wire`s. The
+graph structure should be clear; each wire has one or two parent wire(s) and is
+defined by an operation on these parent wire(s).
 
 After scanning through the text file, the graph is fully constructed. Then, to
 get a value of a `Wire`, I could recursively find the value of each of the
