@@ -13,7 +13,7 @@ def sumNumbers(value, part):
     if isinstance(value, int):
         return value
     if isinstance(value, list):
-        return sum(map(lambda x: sumNumbers(x, part), value))
+        return sum([sumNumbers(x, part) for x in value])
     if isinstance(value, dict) and (part == 1 or not hasRed(value, 1)):
         return sum(map(lambda x: sumNumbers(x, part), value.values()))
     return 0

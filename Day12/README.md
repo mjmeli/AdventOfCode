@@ -23,6 +23,6 @@ For this problem, I decided to make use of Python's JSON library. This made the
 task relatively simple. I made use of recursion to delve deeper into the JSON
 object, finding integers or finding objects with "red". Overall, the script
 is relatively simple, but I think my solution is cool because it was the first
-time that I made use of lambda's and the map function in Python.
+time that I made use of list comprehension, lambda's and the map function in Python.
 
 `day12.py` - Python file that implements solution
