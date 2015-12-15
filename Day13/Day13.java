@@ -8,8 +8,6 @@ import java.util.Collections;
 
 public class Day13 {
 
-    //static HashMap<String, Attendee> attendees; // set of each attendee
-
     public static void main(String[] args) throws FileNotFoundException {
         HashMap<String, Attendee> attendees = new HashMap<>();
         Scanner s = new Scanner(new File(args[0]));
