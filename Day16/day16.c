@@ -54,7 +54,7 @@ int findSue(char * file, int part)
 {
     FILE * f = fopen(file, "r");
     char str[20];
-    int lcnt = 0, sueNum = 0, lastTrait = -1, lastOperation = 0, found = -1;
+    int lcnt = 0, sueNum = 0, lastTrait = 0, lastOperation = EQUAL, found = 0;
     // Parse input - fscanf stops on whitespace, which we can take advantage of
     while(fscanf(f, "%s", str) != EOF && found != 3) {
         switch (lcnt++ % LINE_LENGTH) {
