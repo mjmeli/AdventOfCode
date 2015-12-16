@@ -1,8 +1,16 @@
-all:
-	gcc -Wall -std=c99 day3.c -o day3
-	
-test:
-	./day3 input.txt
+CC = gcc
+CFLAGS = -Wall -std=c99
+
+SRCS = $(wildcard *.c)
+TARGET = $(patsubst %.c,%,$(SRCS))
+
+all: $(TARGET)
+
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
+
+run:
+	./$(TARGET) input.txt
 
 clean:
-	$(RM) day3
+	$(RM) $(TARGET)

@@ -1,8 +1,16 @@
-all:
-	gcc -Wall -std=c99 day11.c -o day11
+CC = gcc
+CFLAGS = -Wall -std=c99
+
+SRCS = $(wildcard *.c)
+TARGET = $(patsubst %.c,%,$(SRCS))
+
+all: $(TARGET)
+
+$(TARGET): $(TARGET).c
+	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).c
 
 run:
-	./day11
+	./$(TARGET)
 
 clean:
-	$(RM) day11
+	$(RM) $(TARGET)
