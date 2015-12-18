@@ -52,4 +52,12 @@ process and everything works out well.
 There isn't much interesting about my code except for doing some cool code things
 like malloc and free and the ternary operator.
 
+One major optimization I made was removing bounds checking on the array by
+adding a ring of "off" lights to the grid. Usually when checking the neighbors
+of a light, you have to make sure to add bounds checking for the neighbors of
+lights that are on the edges of the grid. These comparisons can be
+computationally expensive over 100,000 lights, especially when you consider most
+lights are not on the edge and do not need this check. By adding a ring of "off"
+lights around, I can eliminate these checks in all cases.
+
 `day18.c` - C code that implements solution
