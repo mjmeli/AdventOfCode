@@ -25,3 +25,4 @@ and/or solutions that were the most interesting or the most difficult.
 * Day 7  (very challenging)
 * Day 15
 * Day 17 (interesting solution)
+* Day 20 (tricky solution requiring optimizations)
