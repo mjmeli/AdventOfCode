@@ -1,5 +1,9 @@
-run:
-	python3 day14.py input.txt 2503
+SRCS = $(wildcard *.py)
 
-test:
-	python3 day14.py input_test.txt 1000
+all: run
+
+run: $(SRCS)
+	python3 $(SRCS) input.txt 2503
+
+test: $(SRCS)
+	python3 $(SRCS) input_test.txt 1000

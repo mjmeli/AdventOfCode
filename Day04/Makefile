@@ -1,2 +1,4 @@
-all:
-	python day4.py
+SRCS = $(wildcard *.py)
+
+all: $(SRCS)
+	python $(SRCS)
