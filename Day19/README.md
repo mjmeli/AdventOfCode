@@ -1,49 +1,27 @@
-## Day 14
+## Day 19
 
 #### Problem
-This year is the Reindeer Olympics! Reindeer can fly at high speeds, but must
-rest occasionally to recover their energy. Santa would like to know which of his
-reindeer is fastest, and so he has them race.
+Rudolph the Red-Nosed Reindeer is sick! His nose isn't shining very brightly, and he needs medicine.
 
-Reindeer can only either be `flying` (always at their top speed) or `resting`
-(not moving at all), and always spend whole seconds in either state.
+Red-Nosed Reindeer biology isn't similar to regular reindeer biology; Rudolph is going to need custom-made medicine. Unfortunately, Red-Nosed Reindeer chemistry isn't similar to regular reindeer chemistry, either.
 
-For example, suppose you have the following Reindeer:
+The North Pole is equipped with a Red-Nosed Reindeer nuclear fusion/fission plant, capable of constructing any Red-Nosed Reindeer molecule you need. It works by starting with some input molecule and then doing a series of replacements, one per step, until it has the right molecule.
 
-* Comet can fly 14 km/s for 10 seconds, but then must rest for 127 seconds.
-* Dancer can fly 16 km/s for 11 seconds, but then must rest for 162 seconds.
+However, the machine has to be calibrated before it can be used. Calibration involves determining the number of molecules that can be generated in one step from a given starting point.
 
-After one second, Comet has gone 14 km, while Dancer has gone 16 km. After ten
-seconds, Comet has gone 140 km, while Dancer has gone 160 km. On the eleventh
-second, Comet begins resting (staying at 140 km), and Dancer continues on for a
-total distance of 176 km. On the 12th second, both reindeer are resting. They
-continue to rest until the 138th second, when Comet flies for another ten
-seconds. On the 174th second, Dancer flies for another 11 seconds.
-
-The descriptions of each reindeer are in `input.txt`.
+The machine replaces without regard for the surrounding characters.
 
 ##### Part 1
-
-Given the descriptions of each reindeer, after exactly `2503` seconds, what
-distance has the winning reindeer traveled?
+Your puzzle input describes all of the possible replacements and, at the bottom, the medicine molecule for which you need to calibrate the machine. How many distinct molecules can be created after all the different ways you can do one replacement on the medicine molecule?
 
 ##### Part 2
+Now that the machine is calibrated, you're ready to begin molecule fabrication.
 
-Seeing how reindeer move in bursts, Santa decides he's not pleased with the old
-scoring system. Instead, at the end of each second, he awards one point to the
-reindeer currently in the lead.
+Molecule fabrication always begins with just a single electron, `e`, and applying replacements one at a time, just like the ones during calibration.
 
-Again given the descriptions of each reindeer (in your puzzle input), after
-exactly 2503 seconds, how many points does the winning reindeer have?
+How long will it take to make the medicine? Given the available replacements and the medicine molecule in your puzzle input, what is the fewest number of steps to go from e to the medicine molecule?
 
 #### Solution
-The solution to this problem isn't too exciting. I implemented a Python script
-that would create a list of the `Reindeer`. I then simulated 2503 ticks, where
-in each tick I would move the reindeer or keep it at rest, depending on its
-state. Scoring is a simple task of finding the reindeer with the max distance
-after each tick.
+No solution was developed for this day, unfortunately.
 
-Python was chosen because it has a lot of easy to use tools for quickly
-comparing the fields of each object in a list, which is useful for this problem.
-
-`day14.py` - Python script that implements solution
+`day19.py` - Python script that implements solution
