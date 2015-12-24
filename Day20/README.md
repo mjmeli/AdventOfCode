@@ -49,7 +49,7 @@ an algorithm with the following pseudocode:
 This code works for small puzzle inputs, but my puzzle input was **36 million**.
 Quick analysis would show that the time-complexity of this code is atrocious.
 For reference, my answer to part 1 was house `831600`. This means that the code
-would take **hundreds of trillions** of iterations to get the correct answer.
+would take **hundreds of billions** of iterations to get the correct answer.
 Needless to say, this code does not run fast at all, and so this solution is
 not feasible.
 
@@ -89,7 +89,7 @@ for over 10 minutes and did not reach an answer. The second pseudocode runs for
 less than 15 seconds.
 
 In terms of iterations, the second pseudocode executes about 50 million
-iterations. Compared to hundreds of trillions, that's almost **4 orders of
+iterations. Compared to hundreds of billions, that's almost **4 orders of
 magnitude different!!** Yep, that is probably why it runs faster.
 
 `day20.py` - Python script that implements solution
