@@ -1,5 +1,6 @@
 # Advent of Code
-Daily programming puzzles during the Advent.
+Daily programming puzzles during the Advent. This repo contains my puzzle
+solutions for both years that this has run (2015 and 2016).
 
 #### Usage
 Each folder contains the solution for the corresponding day. The `README` for
@@ -18,6 +19,7 @@ be run easily by using the `Makefile` in each folder.
 There are a lot of days in the Advent. As such, here I hope to list the problems
 and/or solutions that were the most interesting or the most difficult.
 
+##### 2015
 * Day 1
 * Day 3
 * Day 5 (interesting solution)
@@ -26,3 +28,6 @@ and/or solutions that were the most interesting or the most difficult.
 * Day 15
 * Day 17 (interesting solution)
 * Day 20 (tricky solution requiring optimizations)
+
+##### 2016
+TBA
